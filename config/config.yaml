@@ -90,27 +90,182 @@ rss:
   # - 正整数：覆盖全局设置，只推送此天数内的文章
   # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
+    # ═══════════════════════════════════════════════════════════════
+    # 综合科技资讯
+    # ═══════════════════════════════════════════════════════════════
     - id: "hacker-news"
       name: "Hacker News"
       url: "https://hnrss.org/frontpage"
-      # max_age_days: 1               # 示例：只推送1天内的文章
 
     - id: "ruanyifeng"
       name: "阮一峰的网络日志"
       url: "http://www.ruanyifeng.com/blog/atom.xml"
-      # max_age_days: 7               # 示例：推送7天内的文章（更新较慢的博客）
-    
-    - id: "yahoo-finance"
-      name: "雅虎财经"
-      url: "https://finance.yahoo.com/news/rssindex"
-      enabled: false                  # 禁用
+      max_age_days: 7                 # 更新较慢，延长过滤时间
 
-    # 自定义源示例
-    # - id: "custom-feed"
-    #   name: "自定义源"
-    #   url: "https://example.com/feed.xml"
-    #   enabled: false
-    #   max_age_days: 0               # 示例：禁用过滤，推送所有文章
+    # ═══════════════════════════════════════════════════════════════
+    # 创业与商业 (Startup & Business)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "paulgraham"
+      name: "Paul Graham (Y Combinator 创始人)"
+      url: "http://www.aaronsw.com/2002/feeds/pgessays.rss"
+      max_age_days: 30                # 更新很慢，延长过滤时间
+
+    - id: "steveblank"
+      name: "Steve Blank (精益创业)"
+      url: "https://steveblank.com/feed/"
+      max_age_days: 7
+
+    # ═══════════════════════════════════════════════════════════════
+    # 开源项目创始人 (Open Source Founders)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "simonwillison"
+      name: "Simon Willison (Django 联合创始人)"
+      url: "https://simonwillison.net/atom/everything/"
+
+    - id: "antirez"
+      name: "Antirez (Redis 创始人)"
+      url: "http://antirez.com/rss"
+      max_age_days: 30                # 更新很慢
+
+    - id: "lucumr"
+      name: "Armin Ronacher (Flask 创始人)"
+      url: "https://lucumr.pocoo.org/feed.atom"
+      max_age_days: 7
+
+    - id: "mitchellh"
+      name: "Mitchell Hashimoto (HashiCorp 创始人)"
+      url: "https://mitchellh.com/feed.xml"
+      max_age_days: 7
+
+    - id: "matklad"
+      name: "matklad (Rust-analyzer 作者)"
+      url: "https://matklad.github.io/feed.xml"
+      max_age_days: 7
+
+    # ═══════════════════════════════════════════════════════════════
+    # 前端与 Web 开发 (Frontend & Web)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "overreacted"
+      name: "Dan Abramov (React 核心开发者)"
+      url: "https://overreacted.io/rss.xml"
+      max_age_days: 30                # 更新很慢
+
+    - id: "miguelgrinberg"
+      name: "Miguel Grinberg (Flask 教程作者)"
+      url: "https://blog.miguelgrinberg.com/feed"
+
+    # ═══════════════════════════════════════════════════════════════
+    # 网络安全 (Security)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "troyhunt"
+      name: "Troy Hunt (Have I Been Pwned)"
+      url: "https://www.troyhunt.com/rss/"
+
+    - id: "krebsonsecurity"
+      name: "Brian Krebs (网络安全记者)"
+      url: "https://krebsonsecurity.com/feed/"
+
+    # ═══════════════════════════════════════════════════════════════
+    # AI 与机器学习 (AI & ML)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "garymarcus"
+      name: "Gary Marcus (AI 研究者)"
+      url: "https://garymarcus.substack.com/feed"
+
+    - id: "gwern"
+      name: "Gwern (AI 与认知科学研究者)"
+      url: "https://gwern.substack.com/feed"
+      max_age_days: 7
+
+    # ═══════════════════════════════════════════════════════════════
+    # 科技评论与写作 (Tech Commentary)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "pluralistic"
+      name: "Cory Doctorow (科技作家)"
+      url: "https://pluralistic.net/feed/"
+
+    - id: "daringfireball"
+      name: "John Gruber (Daring Fireball, Apple 评论)"
+      url: "https://daringfireball.net/feeds/main"
+
+    - id: "anildash"
+      name: "Anil Dash (科技评论家)"
+      url: "https://anildash.com/feed.xml"
+
+    - id: "derekthompson"
+      name: "Derek Thompson (The Atlantic 作家)"
+      url: "https://www.theatlantic.com/feed/author/derek-thompson/"
+
+    # ═══════════════════════════════════════════════════════════════
+    # 系统与底层开发 (Systems & Low-level)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "oldnewthing"
+      name: "Raymond Chen (微软 Windows 工程师)"
+      url: "https://devblogs.microsoft.com/oldnewthing/feed"
+
+    - id: "rachelbythebay"
+      name: "Rachel by the Bay (系统工程师)"
+      url: "https://rachelbythebay.com/w/atom.xml"
+
+    - id: "berthub"
+      name: "Bert Hubert (DNS 与网络专家)"
+      url: "https://berthub.eu/articles/index.xml"
+
+    # ═══════════════════════════════════════════════════════════════
+    # 硬件与逆向工程 (Hardware & Reverse Engineering)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "righto"
+      name: "Ken Shirriff (硬件逆向工程)"
+      url: "https://www.righto.com/feeds/posts/default"
+      max_age_days: 30                # 更新很慢，但质量极高
+
+    - id: "fabiensanglard"
+      name: "Fabien Sanglard (游戏引擎分析)"
+      url: "https://fabiensanglard.net/rss.xml"
+      max_age_days: 30                # 更新很慢
+
+    # ═══════════════════════════════════════════════════════════════
+    # 编程语言与编译器 (Programming Languages)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "eli-thegreenplace"
+      name: "Eli Bendersky (编程语言专家)"
+      url: "https://eli.thegreenplace.net/feeds/all.atom.xml"
+
+    - id: "bernsteinbear"
+      name: "Max Bernstein (编程语言研究)"
+      url: "https://bernsteinbear.com/feed.xml"
+
+    # ═══════════════════════════════════════════════════════════════
+    # DevOps 与基础设施 (DevOps & Infrastructure)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "jeffgeerling"
+      name: "Jeff Geerling (树莓派与 Ansible 专家)"
+      url: "https://www.jeffgeerling.com/blog.xml"
+
+    - id: "xeiaso"
+      name: "Xe Iaso (云原生与 Nix)"
+      url: "https://xeiaso.net/blog.rss"
+
+    # ═══════════════════════════════════════════════════════════════
+    # 其他优质内容 (Other Quality Content)
+    # ═══════════════════════════════════════════════════════════════
+    - id: "dwarkesh"
+      name: "Dwarkesh Patel (深度访谈播客)"
+      url: "https://www.dwarkeshpatel.com/feed"
+      max_age_days: 7
+
+    - id: "construction-physics"
+      name: "Construction Physics (工程与建筑分析)"
+      url: "https://www.construction-physics.com/feed"
+
+    - id: "experimental-history"
+      name: "Experimental History (社会科学实验)"
+      url: "https://www.experimental-history.com/feed"
+
+    - id: "geohot"
+      name: "George Hotz (comma.ai 创始人)"
+      url: "https://geohot.github.io/blog/feed.xml"
+      max_age_days: 30                # 更新很慢
 
 
 # ===============================================================
@@ -463,12 +618,12 @@ ai_analysis:
 # 模型配置见上方 ai 配置段
 # ===============================================================
 ai_translation:
-  enabled: false                    # 是否启用翻译功能
+  enabled: true                     # 是否启用翻译功能
 
   # 翻译目标语言
   # 格式：自然语言描述
   # 示例: "Chinese", "Korean", "法语"
-  language: "English"
+  language: "Chinese"
 
   # 提示词配置文件路径（相对于 config 目录）
   prompt_file: "ai_translation_prompt.txt"
