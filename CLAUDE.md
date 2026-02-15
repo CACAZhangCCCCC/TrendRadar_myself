@@ -10,6 +10,30 @@ TrendRadar is a hot news aggregation and analysis tool that crawls multiple plat
 **Python**: >=3.10
 **Key Dependencies**: litellm, feedparser, boto3, fastmcp, PyYAML
 
+## Git Workflow Rules
+
+**CRITICAL**: Always commit file changes immediately after making them.
+
+- **When you add files**: Stage and commit them to git
+- **When you modify files**: Stage and commit the changes to git
+- **When you delete files**: Stage and commit the deletion to git
+- **No exceptions**: This applies to ALL file operations (code, configs, docs, etc.)
+
+Follow the commit message format:
+```bash
+git add <files>
+git commit -m "$(cat <<'EOF'
+<type>: <subject>
+
+<body - what changed and why>
+
+Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+EOF
+)"
+```
+
+Common types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`
+
 ## Quick Start Commands
 
 ### Running the Application
